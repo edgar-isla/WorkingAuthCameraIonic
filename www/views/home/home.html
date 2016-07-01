@@ -1,0 +1,15 @@
+<ion-view view-title="Home" hide-back-button="true">
+        <ion-content class="padding-top">
+          <h1>Hello There!</h1>
+          <button class="button button-full button-positive" ng-click="model.sayWhat()">Click Here</button>
+          <button class="button button-full button-assertive" ng-click="model.takePhoto()">
+            Take Photo
+          </button>
+          <button class="button button-full button-assertive" ng-click="model.choosePhoto()">
+            Choose Photo
+          </button>
+          <center>
+            <img ng-show="model.imgURI !== undefined" ng-src="{{model.imgURI}}" style="text-align: center"></center>
+          <button ng-click="model.logOut()" class="button button-clear button-positive">Logout</button>
+        </ion-content>
+</ion-view>
