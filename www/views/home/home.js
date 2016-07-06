@@ -66,6 +66,6 @@ angular.module('App').factory("States", function(){
       });
     }
 
-
+  
   }
 );

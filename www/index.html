@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Pic My State</title>
 
+    <style>
+      #alert {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        background-color: #ddd;
+        color: #333;
+        padding: 5px;
+        font-weight: bold;
+      }
+    </style>
 
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -29,6 +40,11 @@
 
     <!-- libraries -->
     <script src="lib/bootstrapUI.js"></script>
+    <script src="lib/us-map-master/lib/raphael.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+    <script src="lib/us-map-master/example/color.jquery.js"></script>
+
+    <script src="lib/us-map-master/jquery.usmap.js"></script>
     <!--<script src="lib/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>-->
     <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
     <script src="lib/ngstorage/ngStorage.min.js"></script>
@@ -36,9 +52,80 @@
     <script src="lib/angularfire/dist/angularfire.min.js"></script>
     <script src="lib/angular-messages/angular-messages.min.js"></script>
 
+    <script>
+      var states='UT';
+      $(document).ready(function() {
+        $('#map').usmap({
+          'stateSpecificHoverStyles': {
+            'HI' : {fill: '#ff0'}
+          },
+
+          'mouseoverState': {
+            'HI' : function(event, data) {
+              //return false;
+            }
+          },
+
+          'stateSpecificStyles': {
+            'TX': {fill: 'yellow'}
+          },
+
+
+
+          'click' : function(event, data) {
+            states=data.name;
+            console.log(states);
+            $('#alert')
+              .text('Click '+data.name+' on map 1')
+              .stop()
+              .css('backgroundColor', '#ff0')
+              .animate({backgroundColor: '#ddd'}, 1000);
+            $('#map').usmap({
+              'stateSpecificStyles': {
+                'UT': {fill: 'yellow'}
+              }
+            })
+          }
+        });
+
+        $('#map2').usmap({
+          'stateStyles': {
+            fill: '#025',
+            "stroke-width": 1,
+            'stroke' : '#036'
+          },
+          'stateHoverStyles': {
+            fill: 'teal'
+          },
+
+          'click' : function(event, data) {
+            $('#alert')
+              .text('Click '+data.name+' on map 2')
+              .stop()
+              .css('backgroundColor', '#af0')
+              .animate({backgroundColor: '#ddd'}, 1000);
+          }
+        });
+
+        $('#over-md').click(function(event){
+          $('#map').usmap('trigger', 'MD', 'mouseover', event);
+        });
+
+        $('#out-md').click(function(event){
+          $('#map').usmap('trigger', 'MD', 'mouseout', event);
+        });
+      });
+    </script>
+
   </head>
 
   <body ng-app="App">
+  <!--<div id="alert">Click alerts</div>-->
+
+  <!--<div id="map" style="width: 930px; height: 630px; border: solid 3px red;"></div>-->
+
+  <!--<button id="over-md">mouseover MD</button> <button id="out-md">mouseout MD</button>-->
+  <!--<div id="map2" style="width: 300px; height: 300px;"></div>-->
     <ion-nav-bar class="bar-assertive">
       <ion-nav-back-button class="button-icon ion-arrow-left-c">
       </ion-nav-back-button>

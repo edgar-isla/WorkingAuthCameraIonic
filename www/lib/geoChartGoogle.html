@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+</head>
+<body>
+
+<div id="geochart-colors" style="width: 700px; height: 433px;"></div>
+
+<script>
+  var red=32;
+  google.charts.load('current', {
+    'packages': ['geochart']
+  });
+  google.charts.setOnLoadCallback(drawRegionsMap);
+
+  function drawRegionsMap() {
+    var data = google.visualization.arrayToDataTable([
+      ['State', 'Stats'],
+      ['US-AL',red ],
+      ['US-AK', 3],
+      ['US-AZ',4 ],
+      ['US-AR', 32],
+      ['US-CA', 23],
+      ['US-CO',23 ],
+      ['US-CT',6],
+      ['US-DE',3 ],
+      ['US-DC',3 ],
+      ['US-FL', 2],
+      ['US-GA', 2],
+      ['US-HI',6 ],
+      ['US-ID',3 ],
+      ['US-IL',3 ],
+      ['US-IN',7 ],
+      ['US-IA', 7],
+      ['US-KS',3 ],
+      ['US-KY', 4],
+      ['US-LA', 4],
+      ['US-ME',4 ],
+      ['US-MT',4 ],
+      ['US-NE', 3],
+      ['US-NV',4 ],
+      ['US-NH',4 ],
+      ['US-NJ', 6],
+      ['US-NM',4 ],
+      ['US-NY',3 ],
+      ['US-NC',5 ],
+      ['US-ND',5 ],
+      ['US-OH', 3],
+      ['US-OK',4 ],
+      ['US-OR',2 ],
+      ['US-MD',6 ],
+      ['US-MA',4 ],
+      ['US-MI', 7],
+      ['US-MN', 3],
+      ['US-MS', 4],
+      ['US-MO', 3],
+      ['US-PA', 2],
+      ['US-RI', 6],
+      ['US-SC', 7],
+      ['US-SD',7 ],
+      ['US-TN', 5],
+      ['US-TX', 5],
+      ['US-UT', red],
+      ['US-VT', 7],
+      ['US-VA', 7],
+      ['US-WA', 5],
+      ['US-WV',8 ],
+      ['US-WI', 9],
+      ['US-WY', 23]
+    ]);
+
+    var options = {
+      region: "US",
+      resolution: "provinces",
+      colorAxis: {
+        colors: ['#00853f', 'black', '#e31b23']
+      },
+      backgroundColor: '#fff',
+      datalessRegionColor: '#555',
+      defaultColor: '#333',
+    };
+
+    var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));
+    chart.draw(data, options);
+  };
+
+</script>
+</body>
+</html>
