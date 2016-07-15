@@ -1,127 +1,80 @@
 <ion-view view-title="Home" hide-back-button="true">
         <ion-content class="padding-top">
-          <!--<!DOCTYPE html>-->
-          <!--<html>-->
-          <!--<head>-->
-            <!--<title>US Map Demo</title>-->
+          <button class="button" ng-click="modal.show()">Show Modal</button>
 
-            <!--<style>-->
-              <!--#alert {-->
-                <!--font-family: Arial, Helvetica, sans-serif;-->
-                <!--font-size: 16px;-->
-                <!--background-color: #ddd;-->
-                <!--color: #333;-->
-                <!--padding: 5px;-->
-                <!--font-weight: bold;-->
-              <!--}-->
-            <!--</style>-->
+          <!--<h1>Hello There!</h1>-->
+          <!--<button class="button button-full button-positive" ng-click="model.sayWhat()">Click Here</button>-->
+          <!--<button class="button button-full button-assertive" ng-click="model.takePhoto()">-->
+            <!--Take Photo-->
+          <!--</button>-->
+          <!--<button class="button button-full button-assertive" ng-click="model.choosePhoto()">-->
+            <!--Choose Photo-->
+          <!--</button>-->
+          <!--<center>-->
+            <!--<img ng-show="model.imgURI !== undefined" ng-src="{{model.imgURI}}" style="text-align: center"></center>-->
+          <!--<button ng-click="model.logOut()" class="button button-clear button-positive">Logout</button>-->
 
-            <!--<script src="../../lib/us-map-master/lib/raphael.js"></script>-->
-            <!--&lt;!&ndash; <script src="scale.raphael.js"></script> &ndash;&gt;-->
-            <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>-->
-            <!--<script src="../../lib/us-map-master/example/color.jquery.js"></script>-->
-            <!--<script src="../../lib/us-map-master/jquery.usmap.js"></script>-->
+          <!--<br>-->
+          <div class="list list-inset">
+            <label class="item item-input">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="text" placeholder="Search">
+            </label>
+          </div>
+          <div class="card">
+            <div class="item item-text-wrap">
+              This is a basic Card which contains an item that has wrapping text.
+            </div>
+          </div>
 
-            <!--<script>-->
-              <!--var states='UT';-->
-              <!--$(document).ready(function() {-->
-                <!--$('#map').usmap({-->
-                  <!--'stateSpecificHoverStyles': {-->
-                    <!--'HI' : {fill: '#ff0'}-->
-                  <!--},-->
+          <div class="list card">
 
-                  <!--'mouseoverState': {-->
-                    <!--'HI' : function(event, data) {-->
-                      <!--//return false;-->
-                    <!--}-->
-                  <!--},-->
+            <div class="item">
+              <h2>Your US map {{catzz}}</h2>
+            </div>
+            <div svg-map>where is thejfklsda;fjkas;jdfk;jasdfk;jasdklf;jas;dlfj {{catzz}}</div>
 
-                  <!--'stateSpecificStyles': {-->
-                    <!--'TX': {fill: 'yellow'}-->
-                  <!--},-->
+            <div class="item item-image">
+            </div>
 
+            <a class="item item-icon-left assertive" href="#">
+              <i class="icon ion-map"></i>
+              <h1>{{key}}</h1>
+            </a>
 
-
-                  <!--'click' : function(event, data) {-->
-                    <!--states=data.name;-->
-                    <!--console.log(states);-->
-                    <!--$('#alert')-->
-                      <!--.text('Click '+data.name+' on map 1')-->
-                      <!--.stop()-->
-                      <!--.css('backgroundColor', '#ff0')-->
-                      <!--.animate({backgroundColor: '#ddd'}, 1000);-->
-                    <!--$('#map').usmap({-->
-                      <!--'stateSpecificStyles': {-->
-                        <!--'UT': {fill: 'yellow'}-->
-                      <!--}-->
-                    <!--})-->
-                  <!--}-->
-                <!--});-->
-
-                <!--$('#map2').usmap({-->
-                  <!--'stateStyles': {-->
-                    <!--fill: '#025',-->
-                    <!--"stroke-width": 1,-->
-                    <!--'stroke' : '#036'-->
-                  <!--},-->
-                  <!--'stateHoverStyles': {-->
-                    <!--fill: 'teal'-->
-                  <!--},-->
-
-                  <!--'click' : function(event, data) {-->
-                    <!--$('#alert')-->
-                      <!--.text('Click '+data.name+' on map 2')-->
-                      <!--.stop()-->
-                      <!--.css('backgroundColor', '#af0')-->
-                      <!--.animate({backgroundColor: '#ddd'}, 1000);-->
-                  <!--}-->
-                <!--});-->
-
-                <!--$('#over-md').click(function(event){-->
-                  <!--$('#map').usmap('trigger', 'MD', 'mouseover', event);-->
-                <!--});-->
-
-                <!--$('#out-md').click(function(event){-->
-                  <!--$('#map').usmap('trigger', 'MD', 'mouseout', event);-->
-                <!--});-->
-              <!--});-->
-            <!--</script>-->
-          <!--</head>-->
-          <!--<body>-->
-          <!--<div id="alert">Click alerts</div>-->
-
-          <!--<div id="map" style="width: 930px; height: 630px; border: solid 3px red;"></div>-->
-
-          <!--<button id="over-md">mouseover MD</button> <button id="out-md">mouseout MD</button>-->
-          <!--<div id="map2" style="width: 300px; height: 300px;"></div>-->
-          <!--</body>-->
-          <!--</html>-->
-
-          <h1>Hello There!</h1>
-          <button class="button button-full button-positive" ng-click="model.sayWhat()">Click Here</button>
-          <button class="button button-full button-assertive" ng-click="model.takePhoto()">
-            Take Photo
-          </button>
-          <button class="button button-full button-assertive" ng-click="model.choosePhoto()">
-            Choose Photo
-          </button>
-          <center>
-            <img ng-show="model.imgURI !== undefined" ng-src="{{model.imgURI}}" style="text-align: center"></center>
-          <button ng-click="model.logOut()" class="button button-clear button-positive">Logout</button>
-
-          <br><br><br>
-
-          <input type="text"ng-trim="false" ng-model="model.selected" typeahead="state for state in states | filter:$viewValue:stateComparator" class="form-control" />
-          <h1>{{model.selected}}</h1>
-
-          <div id="alert">Click alerts</div>
-
-          <div id="map" style="width: 930px; height: 630px; border: solid 3px red;"></div>
-
-          <button id="over-md">mouseover MD</button> <button id="out-md">mouseout MD</button>
-          <div id="map2" style="width: 300px; height: 300px;"></div>
-
-          <br><br><br>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel panel-body">
+                    <!--<div svg-map></div>-->
+                    <div class="scale">
+                      <!--<div ng-repeat="n in [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]"-->
+                      <!--ng-style="{backgroundColor:'{{n | map_colour}}'}">{{n}}-->
+                      <!--</div>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <!--<p>-->
+                <!--<button ng-click="createDummyData()" class="btn btn-block btn-default">Create Dummy Data</button>-->
+                <!--</p>-->
+                <div class="panel panel-default">
+                  <div class="panel panel-body">
+                    <div class="regionlist">
+                      <div ng-repeat="(key,region) in dummyData"
+                           ng-class="{active:hoverRegion==key}"
+                           ng-click="changeHoverRegion(key)">
+                        <div>{{key}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <!--<script>-->
             <!--var states='UT';-->
             <!--$(document).ready(function() {-->

@@ -6,21 +6,13 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Pic My State</title>
 
-    <style>
-      #alert {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        background-color: #ddd;
-        color: #333;
-        padding: 5px;
-        font-weight: bold;
-      }
-    </style>
-
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css"/>
+
     <link rel="stylesheet" href="lib/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
+
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -37,6 +29,8 @@
     <script src="views/register/register.js"></script>
     <script src="js/services/auth.js"></script>
     <script src="js/services/utils.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/filters.js"></script>
 
     <!-- libraries -->
     <script src="lib/bootstrapUI.js"></script>
@@ -52,70 +46,70 @@
     <script src="lib/angularfire/dist/angularfire.min.js"></script>
     <script src="lib/angular-messages/angular-messages.min.js"></script>
 
-    <script>
-      var states='UT';
-      $(document).ready(function() {
-        $('#map').usmap({
-          'stateSpecificHoverStyles': {
-            'HI' : {fill: '#ff0'}
-          },
+    <!--<script>-->
+      <!--var states='UT';-->
+      <!--$(document).ready(function() {-->
+        <!--$('#map').usmap({-->
+          <!--'stateSpecificHoverStyles': {-->
+            <!--'HI' : {fill: '#ff0'}-->
+          <!--},-->
 
-          'mouseoverState': {
-            'HI' : function(event, data) {
-              //return false;
-            }
-          },
+          <!--'mouseoverState': {-->
+            <!--'HI' : function(event, data) {-->
+              <!--//return false;-->
+            <!--}-->
+          <!--},-->
 
-          'stateSpecificStyles': {
-            'TX': {fill: 'yellow'}
-          },
+          <!--'stateSpecificStyles': {-->
+            <!--'TX': {fill: 'yellow'}-->
+          <!--},-->
 
 
 
-          'click' : function(event, data) {
-            states=data.name;
-            console.log(states);
-            $('#alert')
-              .text('Click '+data.name+' on map 1')
-              .stop()
-              .css('backgroundColor', '#ff0')
-              .animate({backgroundColor: '#ddd'}, 1000);
-            $('#map').usmap({
-              'stateSpecificStyles': {
-                'UT': {fill: 'yellow'}
-              }
-            })
-          }
-        });
+          <!--'click' : function(event, data) {-->
+            <!--states=data.name;-->
+            <!--console.log(states);-->
+            <!--$('#alert')-->
+              <!--.text('Click '+data.name+' on map 1')-->
+              <!--.stop()-->
+              <!--.css('backgroundColor', '#ff0')-->
+              <!--.animate({backgroundColor: '#ddd'}, 1000);-->
+            <!--$('#map').usmap({-->
+              <!--'stateSpecificStyles': {-->
+                <!--'UT': {fill: 'yellow'}-->
+              <!--}-->
+            <!--})-->
+          <!--}-->
+        <!--});-->
 
-        $('#map2').usmap({
-          'stateStyles': {
-            fill: '#025',
-            "stroke-width": 1,
-            'stroke' : '#036'
-          },
-          'stateHoverStyles': {
-            fill: 'teal'
-          },
+        <!--$('#map2').usmap({-->
+          <!--'stateStyles': {-->
+            <!--fill: '#025',-->
+            <!--"stroke-width": 1,-->
+            <!--'stroke' : '#036'-->
+          <!--},-->
+          <!--'stateHoverStyles': {-->
+            <!--fill: 'teal'-->
+          <!--},-->
 
-          'click' : function(event, data) {
-            $('#alert')
-              .text('Click '+data.name+' on map 2')
-              .stop()
-              .css('backgroundColor', '#af0')
-              .animate({backgroundColor: '#ddd'}, 1000);
-          }
-        });
+          <!--'click' : function(event, data) {-->
+            <!--$('#alert')-->
+              <!--.text('Click '+data.name+' on map 2')-->
+              <!--.stop()-->
+              <!--.css('backgroundColor', '#af0')-->
+              <!--.animate({backgroundColor: '#ddd'}, 1000);-->
+          <!--}-->
+        <!--});-->
 
-        $('#over-md').click(function(event){
-          $('#map').usmap('trigger', 'MD', 'mouseover', event);
-        });
+        <!--$('#over-md').click(function(event){-->
+          <!--$('#map').usmap('trigger', 'MD', 'mouseover', event);-->
+        <!--});-->
 
-        $('#out-md').click(function(event){
-          $('#map').usmap('trigger', 'MD', 'mouseout', event);
-        });
-      });
-    </script>
+        <!--$('#out-md').click(function(event){-->
+          <!--$('#map').usmap('trigger', 'MD', 'mouseout', event);-->
+        <!--});-->
+      <!--});-->
+    <!--</script>-->
 
   </head>
 
