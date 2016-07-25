@@ -1,5 +1,5 @@
 'Use Strict';
-angular.module('App', ['ionic','ngStorage', 'ngCordova','firebase','ngMessages','ui.bootstrap'])
+angular.module('App', ['ionic','ngStorage', 'ngCordova','firebase','ngMessages','ui.bootstrap','toaster', 'ngAnimate'])
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
   $ionicConfigProvider.form.checkbox("circle");
 $stateProvider

@@ -4,6 +4,14 @@
 
           <!--<h1>Hello There!</h1>-->
           <!--<button class="button button-full button-positive" ng-click="model.sayWhat()">Click Here</button>-->
+          <div class="card">
+            <div class="item item-text-wrap">
+              <button class="button button-full button-positive" ng-click="modal.show()">
+                <i class="icon ion-plus-circled"></i>
+                Add To My States
+              </button>
+            </div>
+          </div>
           <button class="button button-full button-assertive" ng-click="model.takePhoto()">
             <i class="icon ion-camera"></i>
 
@@ -23,14 +31,7 @@
               <!--<input type="text" placeholder="Search">-->
             <!--</label>-->
           <!--</div>-->
-          <div class="card">
-            <div class="item item-text-wrap">
-              <button class="button button-full button-positive" ng-click="modal.show()">
-                <i class="icon ion-plus-circled"></i>
-              Add To My States
-              </button>
-            </div>
-          </div>
+
 
           <div class="list card">
 
@@ -144,6 +145,7 @@
               <!--});-->
             <!--});-->
           <!--</script>-->
+          <toaster-container toaster-options="{'time-out': 3000,'close-button': true,'position-class': 'toast-top-full-width'}"></toaster-container>
 
         </ion-content>
   <div class="tabs-icon-top  tabs-color-dark">

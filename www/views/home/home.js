@@ -4,12 +4,13 @@ angular.module('App').factory("States", function(){
 
   return states;
 
-}).controller('homeController', function ($state, $cordovaOauth, $localStorage, $location, $http, $ionicPopup, $firebaseObject, Auth, FURL, $cordovaCamera, Utils,States,$scope,$ionicModal) {
+}).controller('homeController', function ($state, $cordovaOauth, $localStorage, $location, $http, $ionicPopup, $firebaseObject, Auth, FURL, $cordovaCamera, Utils,States,$scope,$ionicModal,toaster) {
   // var states = ["AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "FL", "GA", "GU", "HI", "ID", "IL",
   //   "IN", "IA", "KS", "KY", "LA", "ME", "MH", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM",
   //   "NY", "NC", "ND", "MP", "OH", "OK", "OR", "PW", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA",
   //   "WA", "WV", "WI", "WY"];
   $scope.states=States;
+
   $scope.createDummyData = function () {
     var dataTemp = {};
     angular.forEach(states, function (state, key) {
@@ -94,6 +95,10 @@ angular.module('App').factory("States", function(){
 
   $scope.closeModal = function() {
     $scope.modal.hide();
+    toaster.pop('success', "Successfully Saved", "States: this will show selected");
+    console.log($scope.item);
+    console.log("this is working");
+
   };
   }
 
