@@ -1,6 +1,28 @@
-<div class="modal">
-  <header class="bar bar-header bar-positive"><h1 class="title">Choose Your States</h1>
-    <div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
-  </header>
-  <content has-header="true" padding="true"><p>This is a modal</p></content>
-</div>dd
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <div class="buttons">
+      <h1 class="title">Select Where You've been.</h1>
+      <button class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <!--<button class="button button-full button-positive" ng-click="myFunction()">-->
+      <!--Full Width Block Button-->
+    <!--</button>-->
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search">
+      </label>
+    </div>
+    <ion-list>
+      <ion-checkbox ng-repeat="state in states"
+                    ng-model="item.checked"
+                    ng-checked="item.checked">
+        {{state}}
+      </ion-checkbox>
+
+    </ion-list>
+
+  </ion-content>
+</ion-modal-view>

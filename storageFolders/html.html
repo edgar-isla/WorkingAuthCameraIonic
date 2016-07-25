@@ -1,0 +1,37 @@
+<ion-view view-title="{{ reassign.pageTitle | translate }}">
+  <ion-content overflow-scroll="true">
+    <ion-list ng-show="reassign.assignees">
+      <ion-item>
+        <div class="data-text center">
+          {{ "Select a Recipient" | translate }}
+        </div>
+        <br />
+        <xa-quick-filter xa-model="reassign.searchText"></xa-quick-filter>
+      </ion-item>
+
+      <ion-item ng-repeat="assignee in reassign.assignees | filter:reassign.searchText track by $index" class="white-bg item-icon-right"
+                ng-click="reassign.confirmReassign(assignee)">
+        <div class="listTitle wrap">
+          {{ ::assignee.contractor_name }} <span ng-show="assignee.name"> - {{ ::assignee.name }}</span>
+        </div>
+
+        <br />
+        <div class="listText">
+          {{ ::assignee.xn_address }}
+        </div>
+        <br />
+
+        <i class="icon ion-ios-arrow-right"></i>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll distance="1%"
+                         on-infinite="reassign.loadMoreAssignees()">
+    </ion-infinite-scroll>
+
+    <div class="padding none-found" ng-show="reassign.showNoneFound">
+      {{ "No available recipients" | translate }}
+    </div>
+  </ion-content>
+</ion-view>
+
+<!--ng-if="reassign.canLoadMore() && !reassign.showNoMoreFound" immediate-check="false"-->

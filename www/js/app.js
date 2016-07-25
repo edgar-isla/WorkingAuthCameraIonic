@@ -1,6 +1,7 @@
 'Use Strict';
 angular.module('App', ['ionic','ngStorage', 'ngCordova','firebase','ngMessages','ui.bootstrap'])
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+  $ionicConfigProvider.form.checkbox("circle");
 $stateProvider
     .state('login', {
       url: '/login',

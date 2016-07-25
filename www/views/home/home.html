@@ -1,12 +1,14 @@
 <ion-view view-title="Home" hide-back-button="true">
         <ion-content class="padding-top">
-          <button class="button" ng-click="modal.show()">Show Modal</button>
+          <!--<button class="button" ng-click="modal.show()">Show Modal</button>-->
 
           <!--<h1>Hello There!</h1>-->
           <!--<button class="button button-full button-positive" ng-click="model.sayWhat()">Click Here</button>-->
-          <!--<button class="button button-full button-assertive" ng-click="model.takePhoto()">-->
-            <!--Take Photo-->
-          <!--</button>-->
+          <button class="button button-full button-assertive" ng-click="model.takePhoto()">
+            <i class="icon ion-camera"></i>
+
+            Take Photo
+          </button>
           <!--<button class="button button-full button-assertive" ng-click="model.choosePhoto()">-->
             <!--Choose Photo-->
           <!--</button>-->
@@ -15,15 +17,18 @@
           <!--<button ng-click="model.logOut()" class="button button-clear button-positive">Logout</button>-->
 
           <!--<br>-->
-          <div class="list list-inset">
-            <label class="item item-input">
-              <i class="icon ion-search placeholder-icon"></i>
-              <input type="text" placeholder="Search">
-            </label>
-          </div>
+          <!--<div class="list list-inset">-->
+            <!--<label class="item item-input">-->
+              <!--<i class="icon ion-search placeholder-icon"></i>-->
+              <!--<input type="text" placeholder="Search">-->
+            <!--</label>-->
+          <!--</div>-->
           <div class="card">
             <div class="item item-text-wrap">
-              This is a basic Card which contains an item that has wrapping text.
+              <button class="button button-full button-positive" ng-click="modal.show()">
+                <i class="icon ion-plus-circled"></i>
+              Add To My States
+              </button>
             </div>
           </div>
 
@@ -141,4 +146,20 @@
           <!--</script>-->
 
         </ion-content>
+  <div class="tabs-icon-top  tabs-color-dark">
+    <div class="tabs">
+      <a class="tab-item active" href="#">
+        <i class="icon ion-home"></i>
+         Home
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-star"></i>
+         My States
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-gear-a"></i>
+        Settings/About
+      </a>
+    </div>
+  </div>
 </ion-view>
