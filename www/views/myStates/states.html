@@ -1,0 +1,55 @@
+<ion-view view-title="My States" hide-back-button="true">
+  <ion-content class="padding-top">
+
+    For testing purposes : {{model.states}}
+    <button class="button button-full button-positive" ng-click="model.takePhoto()">
+      Take Picture
+    </button>
+    <button class="button button-full button-positive" ng-click="model.choosePhoto()">
+      Choose Pictures (from Phone)
+    </button>
+    <button class="button button-full button-positive" ng-click="model.click()">
+      consoleLog imgURI( for testing)
+    </button>
+
+    <div class="list card" ng-show="model.picTrue">
+
+      <div class="item item-avatar">
+        <i class="icon ion-earth"></i>
+        <h2>Chosen Picture</h2>
+
+      </div>
+
+      <div class="item item-body">
+        <img class="full-image" ng-src="{{model.imgURI}}">
+        <p>
+          able to add text (later on)
+        </p>
+        <p>
+          <p>will be able to rate and commemnt on images.</p>
+          <a href="#" class="subdued">1 Like</a>
+          <a href="#" class="subdued">5 Comments</a>
+        </p>
+      </div>
+
+    </div>
+
+
+  </ion-content>
+  <div class="tabs-icon-top  tabs-color-dark">
+    <div class="tabs">
+      <a class="tab-item" href="#/home">
+        <i class="icon ion-home"></i>
+        Home
+      </a>
+      <a class="tab-item active" href="#/states">
+        <i class="icon ion-star"></i>
+        My States
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-gear-a"></i>
+        Settings/About
+      </a>
+    </div>
+  </div>
+</ion-view>

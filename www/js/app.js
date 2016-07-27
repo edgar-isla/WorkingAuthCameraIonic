@@ -22,6 +22,10 @@ $stateProvider
       url: '/home',
       templateUrl: 'views/home/home.html',
       controller:'homeController as model'
+    }).state('states', {
+      url: '/states',
+      templateUrl: 'views/myStates/states.html',
+      controller:'statesController as model'
     })
     ;
 $urlRouterProvider.otherwise("/login");

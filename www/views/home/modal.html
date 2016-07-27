@@ -17,9 +17,11 @@
     </div>
     <ion-list>
       <ion-checkbox ng-repeat="state in states"
-                    ng-model="item.checked"
-                    ng-checked="item.checked">
-        {{state}}
+                    ng-model="state.checked"
+                    ng-change="selectedStates(state)"
+                  >
+        {{state.name}}
+        {{state.checked}}
       </ion-checkbox>
 
     </ion-list>
