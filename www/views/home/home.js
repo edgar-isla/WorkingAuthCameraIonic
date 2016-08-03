@@ -1,7 +1,15 @@
 'Use Strict';
-angular.module('App').controller('homeController', function ($state, $cordovaOauth, $localStorage, $location, $http, $ionicPopup, $firebaseObject, Auth, FURL, $cordovaCamera, Utils,States,$scope,$ionicModal,toaster,myStates) {
+angular.module('App').controller('homeController', function ($state, $cordovaOauth, $localStorage, $timeout, $location, $http, $ionicPopup, $firebaseObject, Auth, FURL, $cordovaCamera, Utils,States,$scope,$ionicModal,toaster,myStates) {
 
   $scope.states=States;
+  $scope.statesList=States;
+  $scope.searchList=function () {
+    console.log("this is searching");
+    $timeout(function () {
+     
+    }, 400);
+
+  };
 
   $scope.createDummyData = function () {
     var dataTemp = {};
