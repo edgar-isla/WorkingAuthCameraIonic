@@ -7,9 +7,9 @@
       <ion-item ng-repeat="state in model.states" class="item-button-right">
         {{state}}
         <div class="buttons">
-          <button class="button button-positive">
+          <button class="button button-positive" ng-click="openModal(state)">
             <i class="icon icon ion-checkmark"></i></button>
-          <button class="button button-assertive">
+          <button class="button button-assertive" ng-click="deleteState(state)">
             <i class="icon icon ion-close"></i></button>
         </div>
 

@@ -6,9 +6,11 @@ angular.module('App').controller('statesController', function (States,myStates,$
   var model= this;
   model.states=[];
   model.picTrue=false;
+
   getStates();
   function getStates() {
     model.states=myStates.returnStates();
+    console.log(model.PicTrue);
 
   }
   model.click=function () {
@@ -67,9 +69,15 @@ angular.module('App').controller('statesController', function (States,myStates,$
 
 
   };
-
-
-
+  $scope.currentState="";
+  $scope.showCurrent=function () {
+    console.log($scope.currentState);
+  };
+  $scope.openModal=function (state) {
+    $scope.modal.show();
+    $scope.currentState=state;
+    console.log(state);
+  };
   }
 
 );

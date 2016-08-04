@@ -1,12 +1,19 @@
 'Use Strict';
 angular.module('App').controller('homeController', function ($state, $cordovaOauth, $localStorage, $timeout, $location, $http, $ionicPopup, $firebaseObject, Auth, FURL, $cordovaCamera, Utils,States,$scope,$ionicModal,toaster,myStates) {
-
-  $scope.states=States;
+  $scope.listChange=false;
+  $scope.show=function () {
+    console.log($scope.listChange);
+    $scope.listChange=false;
+  };
+  $scope.setChangeTrue=function () {
+    $scope.listChange=true;
+  };
+  $scope.states=States.name;
   $scope.statesList=States;
   $scope.searchList=function () {
     console.log("this is searching");
     $timeout(function () {
-     
+     $scope.statesList=[];
     }, 400);
 
   };
@@ -35,7 +42,7 @@ angular.module('App').controller('homeController', function ($state, $cordovaOau
 
   var ref = new Firebase(FURL);
   var model = this;
-
+  model.statesPercentage=myStates.getPercentage();
   model.sayWhat = function () {
    alert("say what");
     };

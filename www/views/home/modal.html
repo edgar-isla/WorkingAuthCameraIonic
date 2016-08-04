@@ -12,14 +12,15 @@
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Search" ng-change="searchList()" ng-model="searchText">
+        <input type="text" placeholder="Search" ng-model="searchText">
       </label>
     </div>
     <ion-list>
-      <ion-checkbox ng-repeat="state in statesList"
+      <ion-checkbox ng-repeat="state in statesList | filter : searchText"
                     ng-model="state.checked"
-                    ng-change="selectedStates(state)"
-                  >
+                    ng-change="setChangeTrue()">
+                    <!--ng-change="selectedStates(state);"-->
+
         {{state.name}}
         {{state.checked}}
       </ion-checkbox>
@@ -27,4 +28,14 @@
     </ion-list>
 
   </ion-content>
+  <div class="bar bar-footer bar-positive">
+    <div class="title">
+      <button ng-show="listChange"  class="button button-balanced" ng-click="show();searchText=''">
+
+        Save Your States
+
+      </button>
+    </div>
+  </div>
 </ion-modal-view>
+

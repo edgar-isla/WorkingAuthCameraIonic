@@ -6,15 +6,20 @@ angular.module('App').service('myStates', function() {
   var model= this;
   model.myStatesArray=[];
   model.selectedStates=function(states){
-      for(i=0; i<51;i++){
+    model.myStatesArray=[];
+
+    for(i=0; i<51;i++){
+
         if(states[i].checked==true){
           model.myStatesArray.push(states[i].name);
         }
-     
+
       }
   };
   model.returnStates=function(){
     return model.myStatesArray;
+  };
+  model.getPercentage=function () {
+    return model.myStatesArray.length/50;
   }
-
 });
