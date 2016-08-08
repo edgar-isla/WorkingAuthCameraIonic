@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<body ng-app="myApp" ng-controller="personCtrl">
+<input input-focus="searchText">
+<button ng-click="searchText()">Focus</button>
+<br>
+<button ng-click="show()">inputFocus</button>
+</body>
+
+
+
+<script>
+  angular.module('myApp', []).controller('personCtrl', function($scope) {
+    $scope.show=function(){
+      alert('cats');
+      $scope.searchText();
+    }
+  }).directive('inputFocus', function () {
+    'use strict';
+    return {
+      restrict: 'A',
+      link: function (scope, element, attr) {
+        scope[attr.inputFocus] = function () {
+          console.log(element[0]);
+          element[0].focus();
+        };
+      }
+    };
+  });
+</script>
+
+</body>
+</html>
+

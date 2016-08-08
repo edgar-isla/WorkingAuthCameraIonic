@@ -3,6 +3,7 @@
  */
 'Use Strict';
 angular.module('App').controller('statesController', function (States,myStates,$cordovaCamera,$ionicModal,$scope) {
+
   var model= this;
   model.states=[];
   model.picTrue=false;
@@ -10,6 +11,7 @@ angular.module('App').controller('statesController', function (States,myStates,$
   getStates();
   function getStates() {
     model.states=myStates.returnStates();
+    console.log(model.states);                 ////////////////
     console.log(model.PicTrue);
 
   }
@@ -78,6 +80,7 @@ angular.module('App').controller('statesController', function (States,myStates,$
     $scope.currentState=state;
     console.log(state);
   };
+  $scope.myRating=2.5;
   }
 
 );
